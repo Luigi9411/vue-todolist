@@ -5,8 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vue Todolist</title>
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <!-- style-css -->
+	<link rel="stylesheet" href="css/style.css">
+    <!-- vue -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.13/dist/vue.js" defer></script>
+	<script src="js/script.js" defer></script>
+    <!-- icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    
+    <div id="app" class="container">
+        <div class="logo">
+            <img src="" alt="">
+        </div>
+
+        <div class="n-todo">
+            <input type="text" placeholder="Nuovo Todo" v-model="text"/>
+            <button @click="addTodo">Aggiungi</button>
+        </div>
+        <div class="todos-container">
+            <h2 v-if="arrTodo.length == 0" >Non ci sono todo</h2>
+            <ul v-else>
+                <li v-for="(arrTodo,i) in arrTodo" :key="text" class="todo">
+                   <span>{{ arrTodo.text }}</span>
+                   <i class="fas fa-times" @click="deleteText(i)"></i>
+                </li>
+            </ul>
+        </div>
+    </div>
 </body>
 </html>
