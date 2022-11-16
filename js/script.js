@@ -53,5 +53,8 @@ new Vue({
         deleteText(index) {
             this.arrTodo.splice(index,1);
         },
+        invertDone(index) {
+         this.arrTodo[index].done = !this.arrTodo[index].done;
+        }
     }
 });

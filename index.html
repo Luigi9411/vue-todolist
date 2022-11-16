@@ -20,7 +20,7 @@
 <body>
     <div id="app" class="container">
         <div class="logo">
-            <img src="" alt="">
+            <img src="boolean-logo.png" alt="boolean-logo">
         </div>
 
         <div class="n-todo">
@@ -30,7 +30,9 @@
         <div class="todos-container">
             <h2 v-if="arrTodo.length == 0" >Non ci sono todo</h2>
             <ul v-else>
-                <li v-for="(arrTodo,i) in arrTodo" :key="text" class="todo">
+                <li v-for="(arrTodo,i) in arrTodo" :key="text" class="todo" :class="{done: arrTodo.done}" @click="invertDone(i)">
+                   
+
                    <span>{{ arrTodo.text }}</span>
                    <i class="fas fa-times" @click="deleteText(i)"></i>
                 </li>

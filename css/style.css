@@ -70,3 +70,7 @@ html{
 .todo i:hover {
     color: #cc0000;
 }
+
+.done{
+    text-decoration: line-through;
+}
